@@ -3,6 +3,7 @@ import { Button, Space, Typography } from 'antd'
 const { Title } = Typography
 import './App.css'
 import Navbar from './components/header/Navbar'
+import Home from './pages/home'
 
 
 
@@ -29,7 +30,7 @@ function App() {
         <Button type='link'>Link Button</Button>
       </Space> */}
 
-      <Navbar/>
+      <Home/>
 
     </>
   )
