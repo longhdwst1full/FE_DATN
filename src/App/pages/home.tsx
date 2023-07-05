@@ -4,6 +4,7 @@ import image1 from '../../Image/image1.jpg'
 import image2 from '../../Image/image2.jpg'
 import image3 from '../../Image/image3.jpg'
 import { TagOutlined, GiftOutlined, CarOutlined } from '@ant-design/icons'
+import Footer from '../components/footer/footer';
 
 
 const Home: React.FC = () => {
@@ -61,9 +62,6 @@ const Home: React.FC = () => {
                     </button>
                 </div>
             </section>
-
-
-
 
             {/* Section 3 */}
             <section className="py-8">
@@ -141,7 +139,6 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-
             {/* Section 5 */}
             <section className="flex items-center py-8">
                 <div className="w-1/2 px-8">
@@ -158,6 +155,7 @@ const Home: React.FC = () => {
                 </div>
             </section>
         </div>
+        <Footer/>
     </>;
 };
 

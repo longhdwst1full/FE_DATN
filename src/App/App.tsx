@@ -4,6 +4,7 @@ const { Title } = Typography
 import './App.css'
 import Navbar from './components/header/Navbar'
 import Home from './pages/home'
+import Collections from './pages/collections'
 
 
 
@@ -30,7 +31,7 @@ function App() {
         <Button type='link'>Link Button</Button>
       </Space> */}
 
-      <Home/>
+      <Collections/>
 
     </>
   )
