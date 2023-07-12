@@ -89,7 +89,7 @@ const Collections = (props: Props) => {
                         <img src={image} alt="Product 3" className="w-full h-64 mr-2" />
                         <div className="flex flex-col items-center">
                             <div className="mb-2">
-                                <span className="font-bold">Product 3</span>
+                                <span className="font-bold"><a href="/productsDetail">Product 3</a></span>
                             </div>
                             <div className="flex items-center justify-center">
                                 <span className="ml-2">- $20</span>
