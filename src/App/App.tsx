@@ -15,6 +15,7 @@ function App() {
 
   return (
     <>
+
       {/* <div></div>
       <h1>Vite + React</h1>
       <div className='card'>
@@ -32,17 +33,13 @@ function App() {
         <Button type='text'>Text Button</Button>
         <Button type='link'>Link Button</Button>
       </Space> */}
-      
+
 
       <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
             <Route path='/products' element={ <Collections/>} />
             <Route path='/productsDetail' element={ <ProductDetail/>} />
-
-
-            <Route path='/admin' element={ <Dashboard/>} />
-              
           </Routes>
     </BrowserRouter>
 
