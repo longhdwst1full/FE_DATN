@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
-            <a href="/home" className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
+            <a href="/" className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
                 HOME
               </a>
               <a href='/products' className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
