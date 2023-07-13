@@ -6,7 +6,7 @@ import Navbar from './components/header/Navbar'
 import Home from './pages/home'
 import Collections from './pages/collections'
 import ProductDetail from './pages/productDetail'
-import { BrowserRouter, Routes , Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 
@@ -15,6 +15,7 @@ function App() {
 
   return (
     <>
+
       {/* <div></div>
       <h1>Vite + React</h1>
       <div className='card'>
@@ -32,15 +33,15 @@ function App() {
         <Button type='text'>Text Button</Button>
         <Button type='link'>Link Button</Button>
       </Space> */}
-      
+
 
       <BrowserRouter>
-          <Routes>
-            <Route path='/home' element={<Home />} />
-            <Route path='/products' element={ <Collections/>} />
-            <Route path='/productsDetail' element={ <ProductDetail/>} />
-          </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route path='/home' element={<Home />} />
+          <Route path='/products' element={<Collections />} />
+          <Route path='/productsDetail' element={<ProductDetail />} />
+        </Routes>
+      </BrowserRouter>
 
     </>
   )
