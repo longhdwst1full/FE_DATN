@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MenuOutlined, UserOutlined, ShoppingCartOutlined, SearchOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,29 +19,27 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center ">
-            <a href="#" className="text-black text-2xl font-semibold">
-              Logo
-            </a>
+            <Link to={"/"} className="text-black text-2xl font-semibold">LOGO</Link>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
-            <a href="/" className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
+              <Link to="/" className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
                 HOME
-              </a>
-              <a href='/products' className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
-                TEA COLLETIONS
-              </a>
-              <a href="#" className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
+              </Link>
+              <Link to="/products" className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
+                COLLECTION
+              </Link>
+              <Link to="/" className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
                 BLOG
-              </a>
-              <a href="#" className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
-                CONTACT US
-              </a>
+              </Link>
+              <Link to="/" className="text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
+                CONTACT
+              </Link>
             </div>
           </div>
           <div className="flex items-center">
             <div className="hidden md:flex relative">
-            {isSearchOpen && (
+              {isSearchOpen && (
                 <div className="absolute top-0 right-0 mt-14 ">
                   <input
                     type="text"
@@ -104,7 +103,7 @@ const Navbar: React.FC = () => {
             </div>
             <div className="flex items-center mt-3 px-5">
               <button className="flex-shrink-0">
-                <UserOutlined className="h-6 w-6 text-black hover:text-gray-500 focus:outline-none "  />
+                <UserOutlined className="h-6 w-6 text-black hover:text-gray-500 focus:outline-none " />
               </button>
               <div className="ml-3">
                 <p className="text-sm font-medium text-black hover:text-gray-500 ">User</p>

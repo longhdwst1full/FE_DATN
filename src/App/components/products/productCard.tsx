@@ -6,10 +6,10 @@ type ProductList = {
 }
 
 const ProductCard = ({ product }: ProductList) => {
-    console.log(product)
     return <>
-        <div>
-            {product.images.length > 0 ? (
+        {product && (
+            <div>
+            {product.images && product.images.length > 0 ? (
                 <img
                     src={product.images[0]}
                     className="w-full h-64 mr-2"
@@ -30,6 +30,9 @@ const ProductCard = ({ product }: ProductList) => {
                 </div>
             </div>
         </div>
+        )
+            
+        }
     </>
 }
 
