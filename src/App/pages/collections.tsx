@@ -10,7 +10,11 @@ import Categories from '../components/categories/categories';
 type Props = {}
 
 const Collections = (props: Props) => {
+    // lưu trữ từ danh mục
+    const [selectedCategory, setSelectedCategory] = useState<string|undefined|number>('');
+
     
+
     return <>
         <Navbar />
         {/* Banner */}
@@ -22,12 +26,12 @@ const Collections = (props: Props) => {
         {/* body*/}
         <div className="container max-w-7xl mx-auto flex" >
             {/* sidebar */}
-            
-            <Categories/>
+
+            <Categories setSelectedCategory={setSelectedCategory}/>
 
             {/* products */}
-            
-            <Products/>
+
+            <Products selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
         </div>
 
 

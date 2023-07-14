@@ -6,15 +6,23 @@ import { getAllCategory } from '~/App/apis/categories';
 
 type Props = {}
 
-const Categories = (props: Props) => {
+type CategoriesProps = {
+    setSelectedCategory: (category: string | number | undefined) => void;
+  };
+
+const Categories = ({ setSelectedCategory }: CategoriesProps) => {
     const [category, setCategory] = useState<ICategory[]>([])
+
+    const handleCategorySelect = (categoryId: string) => {
+        setSelectedCategory(categoryId);
+      };
 
     useEffect(() => {
         (async () => {
             try {
                 const { data } = await getAllCategory();
                 setCategory(data.docs);
-                console.log(data.docs)
+                // console.log(data.docs)
             } catch (error) {
                 console.log(error);
             }
@@ -27,6 +35,7 @@ const Categories = (props: Props) => {
                     <div className='relative ' key={item._id}>
                         <button
                             className="py-2 px-1 mb-2 mt-3 w-full   relative border-black text-gray-700 hover:bg-gray-300 hover:text-gray-900 flex items-center justify-between "
+                            onClick={()=>{setSelectedCategory(item._id)}}
                         >
                             <span className=''>{item.name}</span>
                             <span>

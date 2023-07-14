@@ -8,7 +8,7 @@ export interface IProduct {
     images: string[],
     description: string,
     price: number,
-    categoryId: ICategory,
+    category: ICategory,
     is_delete: boolean,
     salePrice: number,
     shortDescription: string,
