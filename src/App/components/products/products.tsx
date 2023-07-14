@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import image from '../../../Image/image1.jpg'
-import { IProduct } from '~/App/interfaces/products'
+import { IProduct } from '~/App/types/products'
 import { getAllProducts } from '~/App/apis/products'
 import ProductCard from './productCard'
 

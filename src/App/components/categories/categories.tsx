@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { PlusOutlined } from '@ant-design/icons';
-import { ICategory } from '~/App/interfaces/category';
+import { ICategory } from '~/App/types/category';
 import { getAllCategory } from '~/App/apis/categories';
 
 

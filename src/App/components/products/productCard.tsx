@@ -1,11 +1,12 @@
 import React from 'react'
-import { IProduct } from '~/App/interfaces/products'
+import { IProduct } from '~/App/types/products'
 
 type ProductList = {
     product: IProduct
 }
 
 const ProductCard = ({ product }: ProductList) => {
+    console.log(product)
     return <>
         {product && (
             <div>
@@ -13,6 +14,7 @@ const ProductCard = ({ product }: ProductList) => {
                 <img
                     src={product.images[0]}
                     className="w-full h-64 mr-2"
+                    alt={product.name}
                 />
             ) : (
                 <img
@@ -26,7 +28,7 @@ const ProductCard = ({ product }: ProductList) => {
                     <span className="font-bold">{product.name}</span>
                 </div>
                 <div className="flex items-center justify-center">
-                    <span className="ml-2">${product.price}</span>
+                    <span className="ml-2">${product.salePrice} <del>{product.price}</del></span>
                 </div>
             </div>
         </div>
