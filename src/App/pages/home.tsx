@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/header/Navbar';
 import image1 from '../../Image/image1.jpg'
 import image2 from '../../Image/image2.jpg'
 import image3 from '../../Image/image3.jpg'
 import { TagOutlined, GiftOutlined, CarOutlined } from '@ant-design/icons'
 import Footer from '../components/footer/footer';
+import { IProduct } from '../types/products';
+import { getAllProducts } from '../apis/products';
+import { date } from 'yup';
 
 
 const Home: React.FC = () => {
+    const [products, setProducts] = useState<IProduct[]>([])
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const { data } = await getAllProducts(9);
+                console.log(data.docs)
+                setProducts(data.docs)
+
+            } catch (error) {
+                console.log(error);
+            }
+        })();
+    }, []);
     return <>
         <Navbar />
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
@@ -63,46 +80,19 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* Section 3 */}
+            {/* Best Saler */}
             <section className="py-8">
-                <h2 className="text-2xl font-bold mb-4 text-center">OUR COLLECTIONS</h2>
+
+                <h2 className="text-2xl font-bold mb-4 text-center">BEST SALER</h2>
                 <div className="container mx-auto grid grid-cols-3 gap-4 gap-y-8 ">
-                    <div className="w-full">
-                        <img src={image2} alt="Image 1" className="w-full" />
-                        <p className="text-sm ml-2 text-center mt-2">BLACK TEA</p>
-                    </div>
-                    <div className="w-full">
-                        <img src={image2} alt="Image 1" className="w-full" />
-                        <p className="text-sm ml-2 text-center mt-2">GREEN TEA</p>
-                    </div>
-                    <div className="w-full">
-                        <img src={image2} alt="Image 1" className="w-full" />
-                        <p className="text-sm ml-2 text-center mt-2">WHITE TEA</p>
-                    </div>
-                    <div className="w-full">
-                        <img src={image2} alt="Image 1" className="w-full" />
-                        <p className="text-sm ml-2 text-center mt-2">MATCHA</p>
-                    </div>
-                    <div className="w-full">
-                        <img src={image2} alt="Image 1" className="w-full" />
-                        <p className="text-sm ml-2 text-center mt-2">HERBAL TEA</p>
-                    </div>
-                    <div className="w-full">
-                        <img src={image2} alt="Image 1" className="w-full" />
-                        <p className="text-sm ml-2 text-center mt-2">CHAI</p>
-                    </div>
-                    <div className="w-full">
-                        <img src={image2} alt="Image 1" className="w-full" />
-                        <p className="text-sm ml-2 text-center mt-2">OOLONG</p>
-                    </div>
-                    <div className="w-full">
-                        <img src={image2} alt="Image 1" className="w-full" />
-                        <p className="text-sm ml-2 text-center mt-2">ROOIBOS</p>
-                    </div>
-                    <div className="w-full">
-                        <img src={image2} alt="Image 1" className="w-full" />
-                        <p className="text-sm ml-2 text-center mt-2 ">TEAWARE</p>
-                    </div>
+                {products.map((product, i) =>
+                    
+                        <div className="w-full" key={i}>
+                            <img src={product.images[0]} alt={product.name} className="w-full" />
+                            <p className="text-sm ml-2 text-center mt-2 ">{product.name}</p>
+                        </div>
+                    
+                )}
                 </div>
             </section>
 
@@ -155,7 +145,7 @@ const Home: React.FC = () => {
                 </div>
             </section>
         </div>
-        <Footer/>
+        <Footer />
     </>;
 };
 

@@ -8,14 +8,14 @@ type Props = {}
 
 type CategoriesProps = {
     setSelectedCategory: (category: string | number | undefined) => void;
-  };
+};
 
 const Categories = ({ setSelectedCategory }: CategoriesProps) => {
     const [category, setCategory] = useState<ICategory[]>([])
 
     const handleCategorySelect = (categoryId: string) => {
         setSelectedCategory(categoryId);
-      };
+    };
 
     useEffect(() => {
         (async () => {
@@ -31,11 +31,23 @@ const Categories = ({ setSelectedCategory }: CategoriesProps) => {
     return <>
         <div className=" h-full w-60 flex flex-col  justify-start ml-4">
             <div className="mt-4 ">
+                <div className='relative ' key="0">
+                    <button
+                        className="py-2 px-1 mb-2 mt-3 w-full   relative border-black text-gray-700 hover:bg-gray-300 hover:text-gray-900 flex items-center justify-between "
+                        onClick={() => { setSelectedCategory("") }}
+                    >
+                        <span className=''>All</span>
+                        <span>
+                            <PlusOutlined />
+                        </span>
+                    </button>
+                    <div className="h-0.5 bg-black absolute bottom-0 left-1/4 right-1/4"></div>
+                </div>
                 {category.map((item, index) => (
                     <div className='relative ' key={item._id}>
                         <button
                             className="py-2 px-1 mb-2 mt-3 w-full   relative border-black text-gray-700 hover:bg-gray-300 hover:text-gray-900 flex items-center justify-between "
-                            onClick={()=>{setSelectedCategory(item._id)}}
+                            onClick={() => { setSelectedCategory(item._id) }}
                         >
                             <span className=''>{item.name}</span>
                             <span>

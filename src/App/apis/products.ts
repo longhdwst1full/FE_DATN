@@ -1,7 +1,8 @@
 import instance from "./index";
 
-const getAllProducts = () => {
-    return instance.get("/products");
+const getAllProducts = (limit=10) => {
+    console.log(limit)
+    return instance.get(`/products?_limit=${limit}`);
 };
 
 export { getAllProducts}

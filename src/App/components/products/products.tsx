@@ -3,6 +3,7 @@ import image from '../../../Image/image1.jpg'
 import { IProduct } from '~/App/types/products'
 import { getAllProducts } from '~/App/apis/products'
 import ProductCard from './productCard'
+import { DownOutlined } from '@ant-design/icons';
 
 
 type Props = {}
@@ -15,12 +16,18 @@ type CategoriesProps = {
 const Products = ({ selectedCategory }: CategoriesProps) => {
     const [products, setProducts] = useState<IProduct[]>([])
     const [selectedOption, setSelectedOption] = useState<string>('');
+    const [limit, setLimit] = useState<number>(9)
 
     // console.log(selectedCategory)
+    useEffect(()=>{
+        if(String(selectedCategory)!="" || selectedOption != ""){
+            setLimit(10000)
+        }
+    },[selectedCategory,selectedOption,limit])
     useEffect(() => {
         (async () => {
             try {
-                const { data } = await getAllProducts();
+                const { data } = await getAllProducts(limit);
                 
                 
                 if ( String(selectedCategory) !== '') {
@@ -40,7 +47,7 @@ const Products = ({ selectedCategory }: CategoriesProps) => {
                 console.log(error);
             }
         })();
-    }, [selectedCategory,selectedOption]);
+    }, [selectedCategory,selectedOption,limit]);
     return <>
         <div className="flex-grow h-full flex flex-col justify-end ml-4">
             <div className="mb-4 flex justify-end border-transparent focus:outline-none focus:shadow-none">
@@ -76,11 +83,12 @@ const Products = ({ selectedCategory }: CategoriesProps) => {
                         }
                         return false;
                     })
-                    .map((product, i) => <ProductCard key={i} product={product} />)}
+                    .map((product, i) => <ProductCard key={i} product={product} />
+                )}
             </div>
-
-
+            <button className=' flex justify-end mt-10' onClick={()=>setLimit(limit+9)}>Xem thêm <DownOutlined/></button>
         </div>
+        
     </>
 }
 
