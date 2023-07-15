@@ -7,6 +7,7 @@ import Home from './pages/home'
 import Collections from './pages/collections'
 import ProductDetail from './pages/productDetail'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CheckOutPage from './pages/checkout'
 
 
 
@@ -40,6 +41,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/products' element={<Collections />} />
           <Route path='/productsDetail' element={<ProductDetail />} />
+          <Route path='/checkout' element={<CheckOutPage />} />
         </Routes>
       </BrowserRouter>
 
