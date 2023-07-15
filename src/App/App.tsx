@@ -5,8 +5,10 @@ import './App.css'
 import Home from './pages/home'
 import Collections from './pages/collections'
 import ProductDetail from './pages/productDetail'
-import { BrowserRouter, Routes , Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Dashboard from './pages/admin/dashboard'
+import Login from './pages/login'
+import Register from './pages/register'
 
 
 
@@ -36,13 +38,15 @@ function App() {
 
 
       <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/home' element={<Home />} />
-            <Route path='/products' element={ <Collections/>} />
-            <Route path='/productsDetail' element={ <ProductDetail/>} />
-          </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/products' element={<Collections />} />
+          <Route path='/productsDetail' element={<ProductDetail />} />
+          <Route path='login' element={<Login />} />
+          <Route path='register' element={<Register />} />
+        </Routes>
+      </BrowserRouter>
 
     </>
   )
