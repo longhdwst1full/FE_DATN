@@ -5,6 +5,7 @@ import image1 from '../../Image/image3.jpg'
 import { TagOutlined, GiftOutlined, CarOutlined } from '@ant-design/icons'
 import { SmileOutlined, MehOutlined, FrownOutlined, MehTwoTone } from '@ant-design/icons';
 import { Radio } from 'antd';
+import img4 from '../../Image/img4.jpg'
 
 
 const RadioButton = Radio.Button;
@@ -50,11 +51,11 @@ const ProductDetail = (props: Props) => {
             </div>
           </div>
 
-          <h3 className="text-2xl font-bold mt-4">1000 VNĐ</h3>
+          <h3 className="text-[36px] font-bold mt-4">2$</h3>
 
           <div className="container mx-auto  mt-4">
             <form action="">
-              <p className="text-lg mb-1 mt-7">Size</p>
+              <p className="text-lg mb-1 mt-7">Variants</p>
               <div className="flex items-center justify-start mt-2 mb-5">
                 <RadioGroup defaultValue="M" size="large">
                   <RadioButton value="M">
@@ -111,32 +112,78 @@ const ProductDetail = (props: Props) => {
         </div>
       </section>
     </div>
-    <section className="bg-gray-200 w-full container max-w-7xl mx-auto p-7">
-      <div className="flex h-full">
-        <div className="w-1/2 flex-grow mx-5">
-          <div className='border-b-2 border-black my-4'>
+    <section className="w-full  container max-w-7xl mx-auto p-7">
+
+      <div className="flex h-full  bg-[#F4F4F4] px-6 py-2">
+        {/* LEFT */}
+        <div className=" w-[15%] flex-grow leading-10">
+          <p className='text-3xl mb-4'>Steeping instructions</p>
+          <div className=''>
             <p>SERVING SIZE: 2 tsp per cup, 6 tsp per pot</p>
+            <hr className='mx-5 w-[70%] h-[1px]' />
           </div>
-          <div className='border-b-2 border-black my-4' >
-            <p>SERVING SIZE: 2 tsp per cup, 6 tsp per pot</p>
+
+          <div className='' >
+            <p>WATER TEMPERATURE:  100°C</p>
+            <hr className='mx-5 w-[70%] h-[1px]' />
           </div>
-          <div className='border-b-2 border-black my-4' >
-            <p>SERVING SIZE: 2 tsp per cup, 6 tsp per pot</p>
+          <div className='' >
+            <p>STEEPING TIME: 3 - 5 minutes</p>
+            <hr className='mx-5 w-[70%] h-[1px]' />
           </div>
-          <div className='border-b-2 border-black my-4' >
-            <p>SERVING SIZE: 2 tsp per cup, 6 tsp per pot</p>
+          <div className='' >
+            <p>COLOR AFTER 3 MINUTES</p>
+
           </div>
         </div>
+        {/* right */}
         <div className="w-1/2 flex-grow mx-5">
-          <h2 className='text-3xl'>About this tea</h2>
-          <div className='flex'>
-            <div className="flex-1  border-black border-r-2">Phần tử 1</div>
-            <div className="flex-1">Phần tử 1</div>
-            <div className="flex-1">Phần tử 1</div>
-            <div className="flex-1">Phần tử 1</div>
+          <h2 className='text-3xl mb-5'>About this tea</h2>
+          <div className='flex justify-between'>
+            <div>
+              <p className='font-bold'>FLAVOR</p>
+              <p>spicy</p>
+            </div>
+            <div>
+              <p className='font-bold'>FLAVOR</p>
+              <p>spicy</p>
+            </div><div>
+              <p className='font-bold'>FLAVOR</p>
+              <p>spicy</p>
+            </div><div>
+              <p className='font-bold'>FLAVOR</p>
+              <p>spicy</p>
+            </div>
           </div>
-          <p>SERVING SIZE: 2 tsp per cup, 6 tsp per pot</p>
-          <p>SERVING SIZE: 2 tsp per cup, 6 tsp per pot</p>
+          <h2 className='text-[32px]'>Ingredient</h2>
+          Black Ceylon tea, Green tea, Ginger root, Cloves, Black pepper, Cinnamon sticks, Cardamom, Cinnamon pieces.
+        </div>
+      </div>
+      {/* bot */}
+      <div className=' my-12 '>
+        <h1 className='text-[32px] text-center font-bold my-8'>You may also like</h1>
+        <div className='flex justify-center gap-24'>
+          <div className=' '>
+            <img src={img4} className='mx-auto' alt="" />
+            <div className='text-center'>
+              <p>Ceylon Ginger Cinnamon chai tea</p>
+              <p>€4.85 / 50 g</p>
+            </div>
+          </div>
+          <div className=' '>
+            <img src={img4} className='mx-auto' alt="" />
+            <div className='text-center'>
+              <p>Ceylon Ginger Cinnamon chai tea</p>
+              <p>€4.85 / 50 g</p>
+            </div>
+          </div>
+          <div className=' '>
+            <img src={img4} className='mx-auto' alt="" />
+            <div className='text-center'>
+              <p>Ceylon Ginger Cinnamon chai tea</p>
+              <p>€4.85 / 50 g</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
