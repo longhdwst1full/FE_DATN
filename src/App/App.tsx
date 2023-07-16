@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Button, Space, Typography } from 'antd'
 const { Title } = Typography
 import './App.css'
-import Navbar from './components/header/Navbar'
 import Home from './pages/home'
 import Collections from './pages/collections'
 import ProductDetail from './pages/productDetail'
