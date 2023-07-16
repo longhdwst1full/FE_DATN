@@ -6,7 +6,7 @@ type ProductList = {
 }
 
 const ProductCard = ({ product }: ProductList) => {
-    // console.log(product)
+    console.log(product)
     return <>
         {product && (
             <div>

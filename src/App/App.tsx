@@ -6,7 +6,7 @@ import Home from './pages/home'
 import Collections from './pages/collections'
 import ProductDetail from './pages/productDetail'
 import { BrowserRouter, Routes , Route } from 'react-router-dom'
-import Dashboard from './pages/admin/dashboard'
+
 
 
 
